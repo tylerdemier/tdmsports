@@ -10,7 +10,6 @@
 const mongoose = require('mongoose');
 const bcrypt = require('bcrypt-nodejs');
 
-/* @todo Decidir más datos de usuario. */
 const userSchema = new mongoose.Schema({
     local: {
         email: String,

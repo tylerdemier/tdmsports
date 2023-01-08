@@ -28,7 +28,6 @@ module.exports = function(passport){
     });
 
     /**
-     * @todo Alterar al añadir más campos al usuario.
      * @desc Configuración del registro.
      */
     passport.use('local-signup', new LocalStrategy({
