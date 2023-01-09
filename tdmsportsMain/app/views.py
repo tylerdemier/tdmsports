@@ -9,7 +9,7 @@ import stripe
 publishable_key = 'pk_test_51MOA4RLMQNcaxruGmWcR9wPh0wZJEnDl5ablQms8AQsCkQNmNBBOyq6QpgfRUGFtQ4Df9hdbcqCEZWpvnKFkBYiY00TYzmiKBT'
 stripe.api_key = 'sk_test_51MOA4RLMQNcaxruGjTa93BUR24Ub2ZtSLzxggh7LcC8n3SyNF2H9drShK9kSVdLYcAV5IDbtVtNthqHhL7KqxMKt00PYbhtNA7'
 
-@app.route('payment', methods=['POST'])
+@app.route('/payment', methods=['POST'])
 def payment():
     return redirect(url_for('thanks'))
 
