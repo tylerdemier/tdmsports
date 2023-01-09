@@ -3,6 +3,10 @@
  * @desc Define las ruta dle proyecto.
  */
 
+const express = require("express");
+const request = require("request");
+const {isAuthenticated} = require("../helpers/auth");
+
 module.exports = (app, passport) => {
     /**
      * @desc Route for the index view.
@@ -16,12 +20,12 @@ module.exports = (app, passport) => {
      */
     app.get('/login', (req, res) => {
         res.render('login', {
-            message: req.flash('loginMessage')
+            messages: req.flash('error')
         });
     });
 
     app.post('/login', passport.authenticate('local-login', {
-        successRedirect: '/profile',
+        successRedirect: '/index',
         failureRedirect: '/login',
         failureFlash: true
     }));
@@ -36,26 +40,24 @@ module.exports = (app, passport) => {
     });
 
     app.post('/signup', passport.authenticate('local-signup', {
-        successRedirect: '/profile',
+        successRedirect: '/index',
         failureRedirect: '/signup',
         failureFlash: true
     }));
 
     /**
-     * @todo Cambiar el profile por el main.
-     * @desc Route for the profile view.
+     * @desc Route for the Flask() view.
      */
-    app.get('/profile', (req, res) =>{
-        res.render('profile', {
-            user: req.user
-        });
+    app.get('/index', isAuthenticated, function (req, res) {
+        res.redirect('http://127.0.0.1:5000/');
     });
+
 
     /**
      * @desc Route for the logout function.
      */
-    app.get('/logout', function(req, res, next) {
-        req.logout(function(err) {
+    app.get('/logout', function (req, res, next) {
+        req.logout(function (err) {
             if (err) {
                 return next(err);
             }

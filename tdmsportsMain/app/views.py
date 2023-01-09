@@ -1,15 +1,16 @@
-from flask import render_template, request, session, redirect, url_for, make_response
-from app import app
-from models import Stock
-from models import Order
-from app import db
-
 import random
 import secrets
+
 # pdfkit: pdf creation
 import pdfkit
 # stripe: payment API
 import stripe
+from flask import render_template, request, session, redirect, url_for, make_response
+
+from app import app
+from app import db
+from models import Order
+from models import Stock
 
 publishable_key = 'pk_test_51MOA4RLMQNcaxruGmWcR9wPh0wZJEnDl5ablQms8AQsCkQNmNBBOyq6QpgfRUGFtQ4Df9hdbcqCEZWpvnKFkBYiY00TYzmiKBT'
 stripe.api_key = 'sk_test_51MOA4RLMQNcaxruGjTa93BUR24Ub2ZtSLzxggh7LcC8n3SyNF2H9drShK9kSVdLYcAV5IDbtVtNthqHhL7KqxMKt00PYbhtNA7'
@@ -53,7 +54,6 @@ def thanks():
             db.session.delete(item_to_use)
 
     db.session.commit()
-    session.pop('shoppingcart')
 
     return render_template('thanks.html', order=order)
 
@@ -75,8 +75,9 @@ def get_order_pdf(invoice):
         response = make_response(pdf)
         response.headers['content-Type'] = 'application/pdf'
         response.headers['content-Disposition'] = 'attached; filename=' + invoice + '.pdf'
+        session.pop('shoppingcart')
         return response
-    return redirect(url_for('index()'))
+    return redirect(url_for('index'))
 
 
 # @todo:

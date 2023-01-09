@@ -1,7 +1,9 @@
-from app import db
-from datetime import datetime
-import re
 import json
+import re
+from datetime import datetime
+
+from app import db
+
 
 # Creates a function to create a URL readable for a human.
 def slugify(string):
@@ -33,17 +35,18 @@ class Stock(db.Model):
 
 class JsonEncodedDict(db.TypeDecorator):
     impl = db.Text
+
     def process_bind_param(self, value, dialect):
         if value is None:
             return '{}'
         else:
             return json.dumps(value)
+
     def process_result_value(self, value, dialect):
         if value is None:
             return {}
         else:
             return json.loads(value)
-
 
 
 class Order(db.Model):
