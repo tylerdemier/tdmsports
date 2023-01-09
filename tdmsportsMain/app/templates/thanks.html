@@ -22,7 +22,9 @@
         <div class="text-center">
             <h1>Thank You !</h1>
             <p>Thank you for trusting TDM Sports! Hope to see you soon ;)</p>
-            <button class="btn btn-primary">Go back home</button>
+            <form action={{url_for('get_order_pdf', invoice=order.invoice)}} method="post">
+                <button href class="btn btn-primary">Get invoice</button>
+            </form>
         </div>
     </div>
 </body>

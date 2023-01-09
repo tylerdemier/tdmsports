@@ -176,6 +176,7 @@
 
                                 {% set amount = grandtotal * 100 %}
                                 <form action="/payment" method="POST">
+                                    <input type="hidden" name="amount" value={{amount}}>
                                     <script
                                             src="https://checkout.stripe.com/checkout.js"
                                             class="stripe-button"
