@@ -40,9 +40,8 @@
         <h2>Menu</h2>
         <ul>
             <li><a href="index.html">Home</a></li>
-            <li><a href="item.html">About us</a></li>
-            <li><a href="item.html">Shopping cart</a></li>
-            <li><a href="item.html">My account</a></li>
+            <li><a href="aboutus.html">About us</a></li>
+            <li><a href={{url_for('get_cart')}}>Shopping cart ({{session['shoppingcart']|length}})</a></li>
         </ul>
     </nav>
 
@@ -57,9 +56,9 @@
             </header>
 
             <!-- SearchBar-->
-            <form class="form-inline">
-                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            <form method = "get">
+                <input class="" type="search" placeholder="Search" name="search">
+                <button class="" type="submit">Search</button>
             </form>
 
             <section class="tiles">

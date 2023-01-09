@@ -43,7 +43,7 @@
             <li><a href="item.html">Ipsum veroeros</a></li>
             <li><a href="item.html">Tempus etiam</a></li>
             <li><a href="item.html">Consequat dolor</a></li>
-            <li><a href="elements.html">Elements</a></li>
+            <li><a href="aboutus.html">Elements</a></li>
         </ul>
     </nav>
 
@@ -60,6 +60,14 @@
             <h2>DESCRIPTION: </h2>
             <h3>{{stock.code}}</h3>
             <h3>{{stock.desc}}</h3>
+
+            <form method="POST" action="/add_to_cart">
+                <input type="hidden" name="stock_id" value={{stock.id}}>
+                <button type="submit">Add to cart</button>
+                <label>Quantity: </label>
+                <input type="number" name="stock_quantity" value="1", min="1", max={{stock.amount}}>
+            </form>
+
         </div>
     </div>
 
