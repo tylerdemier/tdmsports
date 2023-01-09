@@ -1,4 +1,3 @@
-from IPython.core.display import Math
 from flask import render_template, request, session, redirect, url_for, make_response
 from app import app
 from models import Stock

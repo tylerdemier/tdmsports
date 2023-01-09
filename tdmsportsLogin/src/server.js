@@ -18,9 +18,8 @@ const morgan = require('morgan');
 const bodyParser = require('body-parser');
 const session = require('express-session')
 
-const { url } = require('./config/database.js');
-mongoose.connect(url, {
-});
+const {url} = require('./config/database.js');
+mongoose.connect(url, {});
 
 require('./config/passport')(passport);
 
