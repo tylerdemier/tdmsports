@@ -1,37 +1,14 @@
 /**
- * @name ROUTES
+ * @name INDEX_ROUTES
  * @desc Define la ruta index del proyecto.
  */
 
-const express = require("express");
-const request = require("request");
-const {isAuthenticated} = require("../../../helpers/auth");
+const express = require('express');
 
-module.exports = (app, passport) => {
-    /**
-     * @desc Route for the index view.
-     */
-    app.get('/', (req, res) => {
-        res.render('index');
-    });
+const router = express.Router();
+const index_controller = require('../controllers/index_controller');
 
-    /**
-     * @desc Route for the Flask() view.
-     */
-    app.get('/index', isAuthenticated, function (req, res) {
-        res.redirect('http://127.0.0.1:5000/');
-    });
+router.get('/', index_controller.index_page);
+router.get('/index', index_controller.index_main);
 
-
-    /**
-     * @desc Route for the logout function.
-     */
-    app.get('/logout', function (req, res, next) {
-        req.logout(function (err) {
-            if (err) {
-                return next(err);
-            }
-            res.redirect('/');
-        });
-    });
-};
+module.exports = router;

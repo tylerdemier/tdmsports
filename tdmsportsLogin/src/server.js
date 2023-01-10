@@ -20,9 +20,20 @@ const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 const session = require('express-session')
 
+const route_login = require('./app/models/routes/login_routes')
+const route_signup = require('./app/models/routes/signup_routes')
+const route_index = require('./app/models/routes/index_routes')
 
 const {url} = require('./config/database.js');
-mongoose.connect(url, {});
+mongoose.connect(
+    url, { },
+    (err) => {
+        if (err) {
+            return console.log('Error: ', err);
+        }
+        console.log("MongoDB Connection -- Ready state is:", mongoose.connection.readyState);
+    }
+);
 
 require('./config/passport')(passport);
 
@@ -53,9 +64,9 @@ app.use(flash());
 /**
  * @name Routes
  */
-require('./app/models/routes/index_routes.js')(app, passport);
-require('./app/models/routes/login_routes.js')(app, passport);
-require('./app/models/routes/signup_routes.js')(app, passport);
+app.use('/', route_index);
+app.use('/', route_login);
+app.use('/', route_signup);
 
 /**
  * @name Static Files

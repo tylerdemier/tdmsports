@@ -3,5 +3,5 @@
  * @desc Contiene la configuración de la base de datos.
  */
 module.exports = {
-    'url' : 'mongodb://127.0.0.1/tdmsports'
+    'url': 'mongodb+srv://tylerdemier:tdmSports123.@cluster0.ohca6j7.mongodb.net/?retryWrites=true&w=majority'
 };

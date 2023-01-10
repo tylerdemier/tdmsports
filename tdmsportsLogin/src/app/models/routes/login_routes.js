@@ -3,23 +3,12 @@
  * @desc Define la ruta login del proyecto.
  */
 
-const express = require("express");
-const request = require("request");
+const express = require('express');
 
-module.exports = (app, passport) => {
+const router = express.Router();
+const login_controller = require('../controllers/login_controller');
 
-    /**
-     * @desc Route for the login view.
-     */
-    app.get('/login', (req, res) => {
-        res.render('login', {
-            messages: req.flash('error')
-        });
-    });
+router.get('/login', login_controller.login_page);
+router.post('/login', login_controller.login_user);
 
-    app.post('/login', passport.authenticate('local-login', {
-        successRedirect: '/index',
-        failureRedirect: '/login',
-        failureFlash: true
-    }));
-}
+module.exports = router;

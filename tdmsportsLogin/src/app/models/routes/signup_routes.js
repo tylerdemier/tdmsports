@@ -1,25 +1,14 @@
 /**
- * @name SIGNUP_ROUTES
- * @desc Define la ruta sing up del proyecto.
+ * @name LOGIN_ROUTES
+ * @desc Define la ruta login del proyecto.
  */
 
-const express = require("express");
-const request = require("request");
+const express = require('express');
 
-module.exports = (app, passport) => {
+const router = express.Router();
+const signup_controller = require('../controllers/signup_controller');
 
-    /**
-     * @desc Route for the signup view.
-     */
-    app.get('/signup', (req, res) => {
-        res.render('signup.ejs', {
-            message: req.flash('signupMessage')
-        });
-    });
+router.get('/signup', signup_controller.signup_page);
+router.post('/signup', signup_controller.signup_user);
 
-    app.post('/signup', passport.authenticate('local-signup', {
-        successRedirect: '/index',
-        failureRedirect: '/signup',
-        failureFlash: true
-    }));
-}
+module.exports = router;
