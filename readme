@@ -1,0 +1,22 @@
+1. Tiene q tener los siguientes prorgamas instaldoss:
+python
+nodejs
+
+2. instalar las dependencias tanto de python como de node:
+
+python command:
+pip install -r requirements.txt
+
+nodejs command:
+npm install
+
+3. runnear ambos serves (en un cmd distinto ehhhhhh pillin)
+python commansd:
+TDMSports\tdmsportsMain\app --> python main.py
+
+node commands:
+dentro de: \TDMSports\tdmsportsLogin --> npm start 
+
+4. Goto this bitch --> http://127.0.0.1:3000
+
+5. disfruta, me ha llevado muchas lagrimas est eproyecto

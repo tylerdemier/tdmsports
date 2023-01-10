@@ -1,3 +1,8 @@
+/**
+ * @name SIGNUP_CONTROLLER
+ * @desc El controller de signup_routes.
+ */
+
 const passport = require('passport')
 
 const signup_user = (req, res, next) => {

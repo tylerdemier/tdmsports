@@ -4,9 +4,4 @@ EXTERNAL {
         email: tylerdemier@opendeusto.es
         password: tdmSports123.
     }
-
-    mongodb {
-        username: tylerdemier
-        password: tdmSports123.
-    }
 }
