@@ -77,7 +77,6 @@ def get_order_pdf(invoice):
         response.headers['content-Disposition'] = 'attached; filename=' + invoice + '.pdf'
         session.pop('shoppingcart')
         return response
-    return redirect(url_for('index'))
 
 
 # @todo:
@@ -151,3 +150,8 @@ def delete_item(id):
         if int(key) == id:
             session['shoppingcart'].pop(key, None)
             return redirect(url_for('get_cart'))
+
+
+@app.route('/about_us')
+def about_us():
+    return render_template('about_us.html')

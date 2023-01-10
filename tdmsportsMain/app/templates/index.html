@@ -17,15 +17,11 @@
     <header id="header">
         <div class="inner">
 
-            <!--
-            @TODO: Cambiar logo
-            !-->
             <!-- Logo -->
-            <a href="index.html" class="logo">
-                <span class="symbol"><img src="{{ url_for('static',filename='images/tdmLogo.svg') }}"
-                                          alt=""/></span><span class="title">TDM SPORTS</span>
+            <a href="{{url_for('index')}}" class="logo">
+                <span class="title">TDM SPORTS</span>
             </a>
-            
+
             <nav>
                 <ul>
                     <li><a href="#menu">Menu</a></li>
@@ -33,39 +29,40 @@
             </nav>
         </div>
     </header>
+    <!---->
 
     <!-- Menu -->
     <nav id="menu">
         <h2>Menu</h2>
         <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="aboutus.html">About us</a></li>
+            <li><a href="{{url_for('index')}}">Home</a></li>
+            <li><a href="{{url_for('about_us')}}">About us</a></li>
             <li><a href={{url_for('get_cart')}}>Shopping cart ({{session['shoppingcart']|length}})</a></li>
         </ul>
     </nav>
+    <!---->
 
     <!-- Main -->
     <div id="main">
         <div class="inner">
+            <!-- Description -->
             <header>
-                <h1>TDM SPORTS<br/>
+                <h1 style="color: #E64646">TDM SPORTS<br/>
                     King of Trainers.</h1>
                 <p>Known worldwide as the King of Trainers, TDM Sports is the leading global retailer of sports fashion.
                     TDM Sports gives access to must-have heat from international footwear brands.</p>
             </header>
+            <!---->
 
-            <!-- SearchBar-->
-            <form method = "get">
+            <!-- SearchBar -->
+            <form method="get">
                 <input class="" type="search" placeholder="Search" name="search">
                 <button class="" type="submit">Search</button>
             </form>
+            <!---->
 
+            <!-- Articles -->
             <section class="tiles">
-
-                <!--
-                @TODO: Cambiar lo de rojo
-                !-->
-
                 {% for stock in stocks %}
                 <article class="style1">
                     <span class="image">
@@ -79,58 +76,37 @@
                     </a>
                 </article>
                 {% endfor %}
-
             </section>
+            <!---->
         </div>
     </div>
+    <!---->
 
-    <!--
-    @TODO: Cambiar footer
-    !-->
     <!-- Footer -->
     <footer id="footer">
         <div class="inner">
             <section>
-                <h2>Get in touch</h2>
-                <form method="post" action="#">
-                    <div class="fields">
-                        <div class="field half">
-                            <input type="text" name="name" id="name" placeholder="Name"/>
-                        </div>
-                        <div class="field half">
-                            <input type="email" name="email" id="email" placeholder="Email"/>
-                        </div>
-                        <div class="field">
-                            <textarea name="message" id="message" placeholder="Message"></textarea>
-                        </div>
-                    </div>
-                    <ul class="actions">
-                        <li><input type="submit" value="Send" class="primary"/></li>
-                    </ul>
-                </form>
+                <img src="{{ url_for('static',filename='images/tdm_sports.svg') }}" alt=""/>
             </section>
+
             <section>
                 <h2>Follow</h2>
                 <ul class="icons">
-                    <li><a href="#" class="icon brands style2 fa-twitter"><span class="label">Twitter</span></a></li>
-                    <li><a href="#" class="icon brands style2 fa-facebook-f"><span class="label">Facebook</span></a>
+                    <li><a href="https://www.linkedin.com/in/tylerdemier/"
+                           class="icon brands style2 fa-linkedin"><span class="label">Linked In</span></a></li>
+                    <li><a href="https://github.com/tylerdemier" class="icon brands style2 fa-github"><span
+                            class="label">GitHub</span></a></li>
+                    <li><a href="mailto: tylerdemier@opendeusto.es" class="icon solid style2 fa-envelope"><span
+                            class="label">Email</span></a>
                     </li>
-                    <li><a href="#" class="icon brands style2 fa-instagram"><span class="label">Instagram</span></a>
-                    </li>
-                    <li><a href="#" class="icon brands style2 fa-dribbble"><span class="label">Dribbble</span></a></li>
-                    <li><a href="#" class="icon brands style2 fa-github"><span class="label">GitHub</span></a></li>
-                    <li><a href="#" class="icon brands style2 fa-500px"><span class="label">500px</span></a></li>
-                    <li><a href="#" class="icon solid style2 fa-phone"><span class="label">Phone</span></a></li>
-                    <li><a href="#" class="icon solid style2 fa-envelope"><span class="label">Email</span></a></li>
                 </ul>
             </section>
             <ul class="copyright">
                 <li>&copy; Untitled. All rights reserved</li>
-                <li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
             </ul>
         </div>
     </footer>
-
+    <!---->
 </div>
 
 <!-- Scripts -->
@@ -139,6 +115,7 @@
 <script src="{{ url_for('static',filename='assets/js/breakpoints.min.js') }}"></script>
 <script src="{{ url_for('static',filename='assets/js/util.js') }}"></script>
 <script src="{{ url_for('static',filename='assets/js/main.js') }}"></script>
+<!---->
 
 </body>
 </html>

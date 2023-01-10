@@ -1,0 +1,153 @@
+<!DOCTYPE HTML>
+<!--
+	Phantom by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+<head>
+    <title>Elements - Phantom by HTML5 UP</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+    <link rel="stylesheet" href="../static/assets/css/main.css"/>
+    <noscript>
+        <link rel="stylesheet" href="../static/assets/css/noscript.css"/>
+    </noscript>
+</head>
+<body class="is-preload">
+<!-- Wrapper -->
+<div id="wrapper">
+
+    <!-- Header -->
+    <header id="header">
+        <div class="inner">
+
+            <!-- Logo -->
+            <a href="{{url_for('index')}}" class="logo">
+                <span class="title">TDM SPORTS</span>
+            </a>
+
+            <!-- Nav -->
+            <nav>
+                <ul>
+                    <li><a href="#menu">Menu</a></li>
+                </ul>
+            </nav>
+
+        </div>
+    </header>
+    <!---->
+
+    <!-- Menu -->
+    <nav id="menu">
+        <h2>Menu</h2>
+        <ul>
+            <li><a href="{{url_for('index')}}">Home</a></li>
+            <li><a href="{{url_for('about_us')}}">About us</a></li>
+            <li><a href={{url_for('get_cart')}}>Shopping cart ({{session['shoppingcart']|length}})</a></li>
+        </ul>
+    </nav>
+    <!---->
+
+    <!-- Main -->
+    <div id="main">
+        <div class="inner">
+
+            <h1 style="color: #E64646">About us</h1>
+            <!-- Text -->
+            <section>
+                <h2>Company</h2>
+                <p>Established in the year 2001 by Tyler de Mier, TDM Sports has long been established as the leading
+                    Basque specialist retailer of fashionable branded, sports and casual wear. What started as a single
+                    shop in Bilbao, Biscay has now expanded across the Basque Country, and by 2006, TDM Sports has
+                    opened a total of 56 stores. By 2011, TDM Sports has dominated most of the EU, primarily in Germany,
+                    Ireland, France, Netherlands and Spain, with Denmark and Sweden to follow suit. At this moment in
+                    time, TDM Sports was already regarded as the most innovative visual merchandiser of sportswear with
+                    the best
+                    and most exclusive stylish range.
+                    <br><br>
+                    Fast forward to 2016, TDM Sports officially launched its first store in Asia, right here in
+                    Malaysia. In
+                    November, TDM Sports opened its first flagship store in Pavilion Elite, Kuala Lumpur, and its third
+                    store in
+                    Asia in Sunway Velocity, Cheras.
+                    <br><br>
+                    TDM Sports looks forward to a progressive development in Asia in the days to come.</p>
+                <hr>
+                <h2>Mission</h2>
+                <p>
+                    Our mission is to bring inspiration and innovation to every athlete* in the world. [*If you have a
+                    body, you are an athlete.] This mission drives us to do everything possible to expand human
+                    potential</p>
+                <hr>
+                <h2>Core values</h2>
+                <p><strong style="color: #E64646">01.</strong><strong> Committed to What’s Right</strong>
+                    <br>
+                    We believe in the power of truth, authenticity, and transparency. We do the right thing, and we do
+                    it right.
+                    <br>
+                    <strong style="color: #E64646">02.</strong><strong> Champion for Our Customer</strong>
+                    <br>
+                    We’re always listening and always learning, so we can deliver the quality experience our customers
+                    deserve every single day.
+                    <br>
+                    <strong style="color: #E64646">03.</strong><strong> Playing on the Dream Team</strong>
+                    <br>
+                    Our diverse and epic team is bound together by a deep belief in our vision, a passionate commitment
+                    to each other, and a shared joy in the adventure of it all. We play to win and have fun while doing
+                    it.
+                    <br>
+                    <strong style="color: #E64646">04.</strong><strong> Hungry for What’s Next</strong>
+                    <br>
+                    We are committed to learning, growing and disrupting. We push ourselves and each other against the
+                    status quo, and we are not afraid to make mistakes.
+                    <br>
+                    <strong style="color: #E64646">05.</strong><strong> Building a Legacy</strong>
+                    <br>
+                    We are forever building better - a better product, a better workplace and a better world. We’re
+                    going to keep raising the bar, changing the game, and ensuring we leave a mark that is never, ever
+                    forgotten.</p>
+
+            </section>
+            <!---->
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer id="footer">
+        <div class="inner">
+            <section>
+                <section>
+                    <img src="{{ url_for('static',filename='images/tdm_sports.svg') }}" alt=""/>
+                </section>
+            </section>
+
+            <section>
+                <h2>Follow</h2>
+                <ul class="icons">
+                    <li><a href="https://www.linkedin.com/in/tylerdemier/"
+                           class="icon brands style2 fa-linkedin"><span class="label">Linked In</span></a></li>
+                    <li><a href="https://github.com/tylerdemier" class="icon brands style2 fa-github"><span
+                            class="label">GitHub</span></a></li>
+                    <li><a href="mailto: tylerdemier@opendeusto.es" class="icon solid style2 fa-envelope"><span
+                            class="label">Email</span></a>
+                    </li>
+                </ul>
+            </section>
+            <ul class="copyright">
+                <li>&copy; Untitled. All rights reserved</li>
+            </ul>
+        </div>
+    </footer>
+
+</div>
+<!-- Scripts -->
+<script src="{{ url_for('static',filename='assets/js/jquery.min.js') }}"></script>
+<script src="{{ url_for('static',filename='assets/js/browser.min.js') }}"></script>
+<script src="{{ url_for('static',filename='assets/js/breakpoints.min.js') }}"></script>
+<script src="{{ url_for('static',filename='assets/js/util.js') }}"></script>
+<script src="{{ url_for('static',filename='assets/js/main.js') }}"></script>
+<!---->
+
+</body>
+</html>
