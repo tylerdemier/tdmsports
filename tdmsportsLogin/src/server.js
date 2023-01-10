@@ -50,12 +50,12 @@ app.use(passport.initialize());
 app.use(passport.session());
 app.use(flash());
 
-
-
 /**
  * @name Routes
  */
-require('./app/routes.js')(app, passport);
+require('./app/models/routes/index_routes.js')(app, passport);
+require('./app/models/routes/login_routes.js')(app, passport);
+require('./app/models/routes/signup_routes.js')(app, passport);
 
 /**
  * @name Static Files
