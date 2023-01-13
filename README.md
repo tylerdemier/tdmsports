@@ -10,11 +10,23 @@ Para que funcione correctamente, debe tener los siguientes programas:
 Necesitas instalar las dependencias tanto de NodeJS como de Python:
 
 **Python**
+1. Abrir un cmd.
+2. Dirigirte a la siguiente dirección: `.\TDMSports\tdmsportsMain\app`
+```
+cd TDMSports/tdmsportsMain/app
+```
+3. Ejecutar el siguiente comando:
 ```
 pip install -r requirements.txt
 ```
 
 **NodeJS**
+1. Abrir un cmd.
+2. Dirigirte a la siguiente dirección: `\TDMSports\tdmsportsLogin`
+```
+cd TDMSports/tdmsportsLogin
+```
+3. Ejecutar el siguiente comando:
 ```
 npm install
 ```
