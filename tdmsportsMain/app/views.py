@@ -1,9 +1,19 @@
+# Imports:
+# 1. random: Random variable generators.
+# 2. secrets: Managing secrets such as account authentication, tokens, and similar.
 import random
 import secrets
 
-# pdfkit: pdf creation
+# Imports:
+# 1. pdfkit: Convert html to pdf.
+# 2. stripe: Payment API.
+# 3. render_template: Render a template by name with the given context.
+# 4. request: Flask request.
+# 5. session: Flask session.
+# 6. redirect: Create a redirect response object.
+# 7. url_for: Generate a URL to the given endpoint with the given values.
+# 8. make_response: Set additional headers in a view.
 import pdfkit
-# stripe: payment API
 import stripe
 from flask import render_template, request, session, redirect, url_for, make_response
 
@@ -18,6 +28,9 @@ stripe.api_key = 'sk_test_51MOA4RLMQNcaxruGjTa93BUR24Ub2ZtSLzxggh7LcC8n3SyNF2H9d
 random_shipping = round(random.uniform(1.99, 10.99), 2)
 
 
+# This function defines:
+# 1. The /payment route.
+# 2. The Stripe payment functionality.
 @app.route('/payment', methods=['GET', 'POST'])
 def payment():
     amount = request.form.get('amount')
@@ -38,6 +51,9 @@ def payment():
     return redirect(url_for('thanks'))
 
 
+# This function defines:
+# 1. The /thanks route.
+# 2. Removing the purchased items from the db.
 @app.route('/thanks')
 def thanks():
     invoice = secrets.token_hex(5)
@@ -58,6 +74,9 @@ def thanks():
     return render_template('thanks.html', order=order)
 
 
+# This function defines:
+# 1. The /get_order_pdf/<invoice> route.
+# 2. The generation of the invoice pdf.
 @app.route('/get_order_pdf/<invoice>', methods=['POST'])
 def get_order_pdf(invoice):
     grandtotal = 0
@@ -79,7 +98,9 @@ def get_order_pdf(invoice):
         return response
 
 
-# @todo:
+# This function defines:
+# 1. The / (index) route.
+# 2. The search bar functionality..
 @app.route('/', methods=['GET', 'POST'])
 def index():
     search = request.args.get('search')
@@ -90,12 +111,17 @@ def index():
     return render_template('index.html', stocks=stocks)
 
 
+# This function defines:
+# 1. The /<url> route.
+# 2. The item showcase page.
 @app.route('/<url>', methods=['GET', 'POST'])
 def stock_detail(url):
     stock = Stock.query.filter(Stock.url == url).first()
     return render_template('item.html', stock=stock)
 
 
+# This function:
+# Merges into one dictionary the data from two dictionaries.
 def merge_dicts(dict_1, dict_2):
     if isinstance(dict_1, dict) and isinstance(dict_2, dict):
         return dict(list(dict_1.items()) + list(dict_2.items()))
@@ -103,6 +129,9 @@ def merge_dicts(dict_1, dict_2):
         return False
 
 
+# This function defines:
+# 1. The /add_to_cart route.
+# 2. The adding to cart functionality.
 @app.route('/add_to_cart', methods=['POST'])
 def add_to_cart():
     stock_id = request.form.get('stock_id')
@@ -126,6 +155,9 @@ def add_to_cart():
         return redirect(url_for("index"))
 
 
+# This function defines:
+# 1. The /cart route.
+# 2. The showcase of the cart.
 @app.route('/cart')
 def get_cart():
     if 'shoppingcart' not in session:
@@ -140,6 +172,9 @@ def get_cart():
     return render_template('cart.html', subtotal=subtotal, shipping=shipping, grandtotal=grandtotal)
 
 
+# This function defines:
+# 1. The /delete_item/<int:id> route.
+# 2. The deleting from the cart functionality.
 @app.route('/delete_item/<int:id>')
 def delete_item(id):
     if 'shoppingcart' not in session and len(session['shoppingcart']) < 0:
@@ -152,6 +187,9 @@ def delete_item(id):
             return redirect(url_for('get_cart'))
 
 
+# This function defines:
+# 1. The /about_us route.
+# 2. The showcase of the about us page.
 @app.route('/about_us')
 def about_us():
     return render_template('about_us.html')

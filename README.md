@@ -1,62 +1,62 @@
 # TDM SPORTS
-TDM Sports es un proyecto de la asignatura desarrollo avanzado de web de datos.
+TDM Sports is a project for the _Desarrollo Avanzado de Software para la Web de Datos_ course.
 
 ## Prerequisites
-Para que funcione correctamente, debe tener los siguientes programas:
+For proper functioning, it should have the following programs:
 1. [Python](https://www.python.org/downloads/)
 2. [NodeJS](https://nodejs.org/en/download/)
 
 ## Installation
-Necesitas instalar las dependencias tanto de NodeJS como de Python:
+You need to install both NodeJS and Python dependencies:
 
 **Python**
-1. Abrir un cmd.
-2. Dirigirte a la siguiente dirección: `.\TDMSports\tdmsportsMain\app`
+1. Open a cmd.
+2. Navigate to the following directory: `.\TDMSports\tdmsportsMain\app`
 ```
 cd TDMSports/tdmsportsMain/app
 ```
-3. Ejecutar el siguiente comando:
+3. Run the following command:
 ```
 pip install -r requirements.txt
 ```
 
 **NodeJS**
-1. Abrir un cmd.
-2. Dirigirte a la siguiente dirección: `\TDMSports\tdmsportsLogin`
+1. Open a cmd.
+2. Navigate to the following directory: `\TDMSports\tdmsportsLogin`
 ```
 cd TDMSports/tdmsportsLogin
 ```
-3. Ejecutar el siguiente comando:
+3. Run the following command:
 ```
 npm install
 ```
 
 ## Usage
-Para ejecutar los servidores debes seguir los siguientes pasos:
+To run the servers, you should follow these steps:
 
 **Python** 
-1. Abrir un cmd.
-2. Dirigirte a la siguiente dirección: `.\TDMSports\tdmsportsMain\app`
+1. Open a cmd.
+2. Navigate to the following directory: `.\TDMSports\tdmsportsMain\app`
 ```
 cd TDMSports/tdmsportsMain/app
 ```
-3. Ejecutar el siguiente comando:
+3. Run the following command:
 ```
 python main.py
 ```
 
 **NodeJS** 
-1. Abrir un cmd.
-2. Dirigirte a la siguiente dirección: `\TDMSports\tdmsportsLogin`
+1. Open a cmd.
+2. Navigate to the following directory: `\TDMSports\tdmsportsLogin`
 ```
 cd TDMSports/tdmsportsLogin
 ```
-3. Ejecutar el siguiente comando:
+3. Run the following command:
 ```
 npm start
 ```
 ## Check
-Deberia aparecer lo siguiente en consola:
+The following should appear in the console:
 
 **Python**
 ```
@@ -83,4 +83,4 @@ MongoDB Connection -- Ready state is: 1
 ```
 
 ## Enjoy
-Para empezar usar esta aplicación dirígete a **http://127.0.0.1:3000**
+To start using this application, navigate to **http://127.0.0.1:3000**

@@ -1,3 +1,7 @@
+# Imports:
+# 1. json: Encoding basic Python object hierarchies.
+# 2. re: Support for regular expressions.
+# 3. datetime: Concrete date/time and related types.
 import json
 import re
 from datetime import datetime
@@ -5,12 +9,23 @@ from datetime import datetime
 from app import db
 
 
-# Creates a function to create a URL readable for a human.
+# This function:
+# Creates the URL for Stock with a specified format.
 def slugify(string):
     pattern = '[^\w()]'
     return re.sub(pattern, '-', string)
 
 
+# Class Stock:
+# id: Unique id in the database.
+# code: Code of the item.
+# name: Name of the item.
+# size: Size of the item.
+# desc: Description of the item.
+# amount: Amount of the item.
+# price: Price of the item.
+# image: Image of the item.
+# url: Unique url of the item.
 class Stock(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     code = db.Column(db.String(10), nullable=False)
@@ -49,6 +64,12 @@ class JsonEncodedDict(db.TypeDecorator):
             return json.loads(value)
 
 
+# Class Order:
+# id: Unique id in the database.
+# invoice: Invoice of the order.
+# status: Status of the order.
+# date_created: Date created of the order.
+# orders: Orders inside the order.
 class Order(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     invoice = db.Column(db.String(20), unique=True, nullable=False)

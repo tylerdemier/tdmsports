@@ -1,6 +1,7 @@
+# Imports:
+# 1. os: OS routines.
 import os
 
-# Function to get the absolute path
 BASE_DIR = os.path.dirname(os.path.abspath(__name__))
 
 class Config:
