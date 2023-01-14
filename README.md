@@ -10,10 +10,10 @@ For proper functioning, it should have the following programs:
 You need to install both NodeJS and Python dependencies:
 
 **Python**
-1. Open a cmd.
-2. Navigate to the following directory: `.\TDMSports\tdmsportsMain\app`
+1. Open a cmd as administrator.
+2. Navigate to the following directory: `.\tdmsportsMain`
 ```
-cd TDMSports/tdmsportsMain/app
+cd tdmsportsMain
 ```
 3. Run the following command:
 ```
@@ -22,9 +22,9 @@ pip install -r requirements.txt
 
 **NodeJS**
 1. Open a cmd.
-2. Navigate to the following directory: `\TDMSports\tdmsportsLogin`
+2. Navigate to the following directory: `tdmsportsLogin`
 ```
-cd TDMSports/tdmsportsLogin
+cd tdmsportsLogin
 ```
 3. Run the following command:
 ```
@@ -36,9 +36,9 @@ To run the servers, you should follow these steps:
 
 **Python** 
 1. Open a cmd.
-2. Navigate to the following directory: `.\TDMSports\tdmsportsMain\app`
+2. Navigate to the following directory: `.tdmsportsMain\app`
 ```
-cd TDMSports/tdmsportsMain/app
+cd tdmsportsMain/app
 ```
 3. Run the following command:
 ```
@@ -47,9 +47,9 @@ python main.py
 
 **NodeJS** 
 1. Open a cmd.
-2. Navigate to the following directory: `\TDMSports\tdmsportsLogin`
+2. Navigate to the following directory: `tdmsportsLogin`
 ```
-cd TDMSports/tdmsportsLogin
+cd tdmsportsLogin
 ```
 3. Run the following command:
 ```
